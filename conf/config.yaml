@@ -1,0 +1,7 @@
+mysql:
+  host: 'localhost:3306'
+  database: 'tornado_todo'
+  user: 'tornado'
+  password: '123'
+utils:
+  port: 8909
