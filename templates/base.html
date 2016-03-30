@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>
+            {% block title %}todo{% end %}
+        </title>
+        <link rel='shortcut icon' type='image/x-icon' href="{{ static_url('images/favicon.ico') }}"/>
+        <link rel="stylesheet" href="{{ static_url("styles/reset.css") }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ static_url("styles/index/style.css") }}" type="text/css"/>
+    </head>
+
+    <body>
+        <div class="page">
+            <div class="header box">
+                <a href="http://www.tornadoweb.org/en/stable/" target="_blank">
+                    <img src="{{ static_url("images/tornado.png") }}" alt="powered by tornado" />
+                </a>
+                <a href="/"> Todo List</a>
+            </div>
+
+            <div class="main box">
+                {% block items %}
+                {% end %}
+            </div>
+        </div>
+        {% block bottom %}{% end %}
+    </body>
+</html>
