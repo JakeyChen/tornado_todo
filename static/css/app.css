@@ -1,0 +1,25 @@
+.container {
+    width: 960px;
+    margin: 10px auto;
+    background: #FFF;
+    padding: 10px 20px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+.todos ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #CCC; 
+}
+
+.post p {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+                
+.post .submit { 
+    line-height: normal; 
+    -padding: 0; 
+}

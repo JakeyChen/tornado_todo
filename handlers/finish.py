@@ -4,6 +4,10 @@ from base import BaseHandler
 
 
 class FinishHandler(BaseHandler):
+    '''
+    Finish Handler
+    '''
+    
     def get(self, id):
         todo = self.db.query("select * from todo where id=%s", int(id))
         if not todo:

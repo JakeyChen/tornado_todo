@@ -9,8 +9,8 @@ class NewHandler(BaseHandler):
     '''
 
     def post(self):
-        title = self.get_argument("title")
-        if not title:
+        todo_text = self.get_argument("todo_text")
+        if not todo_text:
             return None
         self.db.execute('''insert into todo 
                             (
@@ -19,5 +19,5 @@ class NewHandler(BaseHandler):
                             values
                             (
                                 %s
-                            )''', title)
+                            )''', todo_text)
         self.redirect("/")

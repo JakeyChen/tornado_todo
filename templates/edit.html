@@ -14,17 +14,24 @@
 {%end%}
 
 {% block content %}
-    <a href="http://www.tornadoweb.org/en/stable/" target="_blank">
-        <img src="{{ static_url("images/tornado.png") }}" alt="powered by tornado" />
-    </a>
+    <div class="container">
+        <a href="/">
+            <img src="{{ static_url("images/tornado.png") }}" alt="powered by tornado" />
+        </a>
+    </div>
 {% end %}
 
 {% block items %}
 {% end %}
 
 {% block bottom %}
-    <form action="/todo/{{ todo.id }}/edit" method="post" id="post_new" onsubmit="return emptyCheck()">
-        <p><input type="text" name="todo_text" id="todo_text" value="{{ todo.todo_text }}"/></p>
-        <p><input type="submit" class="submit" value="完成" /></p>
-    </form>
+    <div class="container">
+        <div class="post">
+            <form action="/todo/{{ todo.id }}/edit" method="post" id="post_new" onsubmit="return emptyCheck()">
+                {% raw xsrf_form_html() %}
+                <p><input type="text" name="todo_text" id="todo_text" value="{{ todo.todo_text }}"/></p>
+                <p><input type="submit" class="submit" value="完成" /></p>
+            </form>
+        </div>
+    </div>
 {% end %}

@@ -9,11 +9,10 @@ class IndexHandler(BaseHandler):
     '''
 
     def get(self):
-        title = "todo"
         todos = self.db.query('''select 
                                     * 
                                 from 
                                     todo
                                 order by 
                                     finished''')
-        self.render("index.html", todos=todos, title=title)
+        self.render("index.html", todos=todos)

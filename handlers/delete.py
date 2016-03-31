@@ -4,6 +4,10 @@ from base import BaseHandler
 
 
 class DeleteHandler(BaseHandler):
+    '''
+    Delete Handler's
+    '''
+
     def get(self, id):
         todo = self.db.query("select * from todo where id=%s", int(id))
         if not todo:

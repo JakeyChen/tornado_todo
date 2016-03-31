@@ -20,12 +20,12 @@ class EditHandler(BaseHandler):
         todo = todos[0]
         if not todo:
             return None
-        title = self.get_argument("title")
+        todo_text = self.get_argument("todo_text")
         self.db.execute('''update todo set 
                             todo_text=%s, 
                             post_date=now() 
                         where 
                             id=%s''', 
-                        title, 
+                        todo_text, 
                         int(id))
         self.redirect("/")

@@ -7,6 +7,7 @@ class BaseHandler(tornado.web.RequestHandler):
     '''
     All Handler's Base
     '''
+    
     @property
     def db(self):
         '''
