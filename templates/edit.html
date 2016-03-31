@@ -1,27 +1,30 @@
 {% extends "base.html" %}
 
-{% block items %}
-    <div class="box">
-        <div class="box post">
-            <h2>修改</h2>
-            <form action="/todo/{{ todo.id }}/edit" method="post" id="post_new" onsubmit="return emptyCheck()">
-                <p><input type="text" name="title" class="long_txt" value="{{ todo.todo_text }}"/></p>
-                <p><input type="submit" class="submit" value="完成" /></p>
-            </form>
-        </div>
+{%block header%}
+    <script type="text/javascript">
+        function emptyCheck() {
+            var todo_text = document.getElementById("todo_text").value
+            if (todo_text.length == 0) {
+                alert("todo_text can't be empty.")
+                return false;
+            }
+            return true;
+        }
+    </script>
+{%end%}
 
-    </div>
+{% block content %}
+    <a href="http://www.tornadoweb.org/en/stable/" target="_blank">
+        <img src="{{ static_url("images/tornado.png") }}" alt="powered by tornado" />
+    </a>
+{% end %}
+
+{% block items %}
 {% end %}
 
 {% block bottom %}
-<script type="text/javascript">
-    function emptyCheck() {
-        var todo_text= document.all['todo_text'].value;
-        if (todo_text.length == 0) {
-            alert("todo_text can't be empty.")
-            return false;
-        }
-        return true;
-    }
-</script>
+    <form action="/todo/{{ todo.id }}/edit" method="post" id="post_new" onsubmit="return emptyCheck()">
+        <p><input type="text" name="todo_text" id="todo_text" value="{{ todo.todo_text }}"/></p>
+        <p><input type="submit" class="submit" value="完成" /></p>
+    </form>
 {% end %}
