@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding:utf-8
 
+import os
 import logging.config
 
 import yaml
@@ -15,6 +16,8 @@ from url import url
 from application import settings
 
 
+if not os.path.exists("logs"):
+    os.makedirs("logs")
 with open('conf/logging.yaml', 'r') as f1:
     logging.config.dictConfig(yaml.load(f1))
 with open('conf/config.yaml', 'r') as f2:
