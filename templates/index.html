@@ -1,16 +1,7 @@
 {% extends "base.html" %}
 
 {%block header%}
-    <script type="text/javascript">
-        function emptyCheck() {
-            var todo_text = document.getElementById("todo_text").value
-            if (todo_text.length == 0) {
-                alert("todo_text can't be empty.")
-                return false;
-            }
-            return true;
-        }
-    </script>
+<script src="{{ static_url('js/todo.js') }}"></script>
 {%end%}
 
 {% block content %}
@@ -49,11 +40,9 @@
 {% block bottom %}
     <div class="container">
         <div class="post">
-            <form action="/todo/new" method="post" id="post_new" onsubmit="return emptyCheck()">
-                {% raw xsrf_form_html() %}
-                <p><input type="text" name="todo_text" id="todo_text" /></p>
-                <p><input type="submit" class="submit" value="Add" /></p>
-            </form>
+            <input id="todo_text" type="text" />
+            <br/>
+            <button id="btn_add" onclick="newTodo()"> Add</button>
         </div>
     </div>
 {% end %}

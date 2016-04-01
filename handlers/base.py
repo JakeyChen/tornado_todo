@@ -10,7 +10,10 @@ class BaseHandler(tornado.web.RequestHandler):
     
     @property
     def db(self):
-        '''
-        dal
-        '''
         return self.application.db
+
+    def req(self, status, info):
+        self.write({
+            "status": status,
+            "info": info
+        })

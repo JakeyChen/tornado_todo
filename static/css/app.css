@@ -14,12 +14,12 @@
     border-bottom: 1px dotted #CCC; 
 }
 
-.post p {
+.post input {
     margin-left: 10px;
     margin-bottom: 10px;
 }
                 
-.post .submit { 
-    line-height: normal; 
-    -padding: 0; 
+.post button { 
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
